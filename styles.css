@@ -1,0 +1,215 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #6a5cff, #8f5bff);
+  --bg-light: #f6f7fb;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+}
+
+/* ---------- GLOBAL ---------- 
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+*/
+
+/* ---------- LANDING PAGE ---------- */
+.landing-container {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+
+.icon {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto 16px auto; 
+  font-size: 48px;
+  margin-bottom: 16px;
+  width: 100px;
+  height: 80px;
+  background-color: #8d34fe;
+  border-radius: 30px;
+  
+}
+
+.title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a5cff, #8f5bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+.subtitle p {
+  text-align: center;
+  margin: 0 auto 16px auto; 
+  max-width: 600px;
+  margin: 0 auto;
+  
+}
+
+.subtitle {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #060606;
+  
+}
+
+.st-key-start_button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 16px auto; 
+}
+
+
+.st-key-start_button button {
+  align-items: center;
+  text-align: center;
+  background-color: #8d34fe;
+  padding: 6px 8px;
+  
+  
+
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ---------- CHAT HEADER ---------- */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  /*border-bottom: 1px solid #e5e7eb;*/
+  margin-bottom: 12px;
+}
+
+.bot-icon {
+  font-size: 28px;
+}
+
+.chat-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000 !important;
+}
+
+.chat-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+
+
+/* ---------- INPUT ---------- */
+
+/* Style assistant messages */
+div[data-testid="stChatMessageContent"] {
+    background-color: white;
+    color: #000000;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Style the text inside chat messages */
+div[data-testid="stChatMessageContent"] p {
+    color: #000000 !important;
+    margin: 0;
+}
+
+
+.st-key-user_input input {
+    background-color: #e9e3ff !important;
+    color: #000000 !important;  
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+
+
+
+
+/* Remove gray background from user messages */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) {
+    background-color: transparent !important;
+}
+
+/* Style just the user message content box */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) div[data-testid="stChatMessageContent"] {
+    background-color: white;
+    color: #000000;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+
+
+.stApp {
+    background-color: #e9e3ff; /* adjust to match your purple */
+}
+
+/* Also change the chat input container background */
+div[data-testid="stChatInput"] {
+    background-color: #e9e3ff !important;
+}
+
+/* And the bottom section where the input is */
+section[data-testid="stBottom"] {
+    background-color: #e9e3ff !important;
+}
+
+/* Footer area */
+footer {
+    background-color: #e9e3ff !important;
+}
+
+/*
+.chat-input {
+  display: flex;
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+}
+
+.send-btn {
+  margin-left: 12px;
+  background: var(--primary-gradient);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+*/
