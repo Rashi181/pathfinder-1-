@@ -38,7 +38,7 @@ if "page" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-if "user_id" not in st.session_state:
+if "user_id" not in st.session_state: #added user_id to session state
     st.session_state.user_id = str(uuid.uuid4())
 
 
@@ -140,15 +140,16 @@ def chat_page():
     if user_input:
         st.session_state.messages.append({"role": "user", "content": user_input})
 
-        # replaced with API call to backend
-        try:
-            response = requests.post(
-                "http://127.0.0.1:8000/ask",
-                json={"user_id": st.session_state.user_id, "message": user_input}
-            )
-            bot_reply = response.json()["response"]
-        except Exception as e:
-            bot_reply = f"Error: {e}"
+        with st.spinner("Thinking..."): #added a thinking spinner during delays
+            # replaced with API call to backend
+            try:
+                response = requests.post(
+                    "http://127.0.0.1:8000/ask",
+                    json={"user_id": st.session_state.user_id, "message": user_input}
+                )
+                bot_reply = response.json()["response"]
+            except Exception as e: #changed the error message to be more user friendly
+                bot_reply = "Oops! Having trouble connecting right now. Please try again later."
 
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
         st.rerun()
