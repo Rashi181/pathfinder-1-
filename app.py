@@ -1,4 +1,6 @@
 import streamlit as st
+import uuid
+import requests
 
 
 st.set_page_config(
@@ -36,7 +38,8 @@ if "page" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-
+if "user_id" not in st.session_state:
+    st.session_state.user_id = str(uuid.uuid4())
 
 
 # ------------------ LANDING PAGE ------------------
@@ -137,8 +140,15 @@ def chat_page():
     if user_input:
         st.session_state.messages.append({"role": "user", "content": user_input})
 
-        # Placeholder bot response (replace with Gemini later)
-        bot_reply = "Thanks for sharing! Tell me a bit more so I can help you better."
+        # replaced with API call to backend
+        try:
+            response = requests.post(
+                "http://127.0.0.1:8000/ask",
+                json={"user_id": st.session_state.user_id, "message": user_input}
+            )
+            bot_reply = response.json()["response"]
+        except Exception as e:
+            bot_reply = f"Error: {e}"
 
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
         st.rerun()
