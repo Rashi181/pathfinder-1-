@@ -68,6 +68,10 @@ def landing_page():
         unsafe_allow_html=True
     )
 
+with st.sidebar:
+    st.[chat]
+
+
 
 
 # ------------------ CHAT PAGE ------------------
