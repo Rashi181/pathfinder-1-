@@ -69,7 +69,7 @@ def landing_page():
     )
 
 with st.sidebar:
-    st["chat"]
+    st.button("chat")
 
 
 
